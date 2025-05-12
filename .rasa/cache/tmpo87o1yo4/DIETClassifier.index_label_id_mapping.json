@@ -1,0 +1,16 @@
+{
+  "0": "add_to_order",
+  "1": "affirm",
+  "2": "cancel_order",
+  "3": "check_order_status",
+  "4": "deny",
+  "5": "feedback_negative",
+  "6": "feedback_positive",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "inform",
+  "10": "order_food",
+  "11": "provide_address",
+  "12": "provide_payment",
+  "13": "remove_from_order"
+}

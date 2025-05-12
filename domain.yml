@@ -1,0 +1,70 @@
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - order_food
+  - add_to_order
+  - remove_from_order
+  - check_order_status
+  - cancel_order
+  - provide_address
+  - provide_payment
+  - inform
+  - feedback_positive
+  - feedback_negative
+
+entities:
+  - food_item
+  - address
+  - payment_method
+
+slots:
+  food_order:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
+
+  payment_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_method
+
+responses:
+  utter_greet:
+    - text: "Hi! How can I help you with your food order today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Hope to serve you again soon."
+
+  utter_ask_address:
+    - text: "Can you please provide your delivery address?"
+
+  utter_ask_payment:
+    - text: "How would you like to pay? (cash/card/wallet)"
+
+  utter_order_confirmation:
+    - text: "Got it! Your order has been placed."
+
+  utter_feedback_thanks:
+    - text: "Thanks for your feedback!"
+
+  utter_ask_more_items:
+    - text: "Would you like to add anything else?"
+
+actions:
+  - action_place_order
+  - action_check_order_status
+  - action_cancel_order
+  - action_store_feedback
+
+  

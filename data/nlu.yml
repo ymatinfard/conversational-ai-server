@@ -1,0 +1,95 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - good morning
+    - hey
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - catch you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - sure
+    - of course
+    - definitely
+
+- intent: deny
+  examples: |
+    - no
+    - not really
+    - I don't think so
+
+- intent: order_food
+  examples: |
+    - I want to order food
+    - Can I get a burger and fries?
+    - I would like to order a pizza
+    - I need a vegan meal
+    - I want chicken biryani and coke
+
+- intent: add_to_order
+  examples: |
+    - add a coke
+    - also get me some fries
+    - include a salad
+    - I want an extra burger
+
+- intent: remove_from_order
+  examples: |
+    - remove the fries
+    - cancel the drink
+    - take out the salad
+
+- intent: check_order_status
+  examples: |
+    - Where is my order?
+    - Is my food on the way?
+    - Track my order
+    - How long will it take?
+
+- intent: cancel_order
+  examples: |
+    - I want to cancel my order
+    - Cancel everything
+    - Stop the order please
+
+- intent: provide_address
+  examples: |
+    - My address is 123 Main Street
+    - I live at 5th Avenue
+    - Deliver it to 45 Elm St.
+
+- intent: provide_payment
+  examples: |
+    - I'll pay by card
+    - Cash on delivery
+    - Use my saved wallet
+
+- intent: inform
+  examples: |
+    - I want pizza and coke
+    - Just the salad
+    - make it spicy
+    - no onions please
+
+- intent: feedback_positive
+  examples: |
+    - that was great
+    - delicious food
+    - I'm happy
+    - amazing service
+
+- intent: feedback_negative
+  examples: |
+    - food was cold
+    - I'm not happy
+    - poor service
+    - late delivery

@@ -1,0 +1,33 @@
+version: "3.1"
+stories:
+- story: happy path order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_food
+  - action: utter_ask_address
+  - intent: provide_address
+    entities:
+      - address: "123 Main Street"
+  - action: utter_ask_payment
+  - intent: provide_payment
+    entities:
+      - payment_method: "card"
+  - action: action_place_order
+  - action: utter_order_confirmation
+
+- story: add item to order
+  steps:
+  - intent: add_to_order
+  - action: utter_ask_more_items
+
+- story: cancel an order
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+
+- story: give feedback
+  steps:
+  - intent: feedback_positive
+  - action: action_store_feedback
+  - action: utter_feedback_thanks

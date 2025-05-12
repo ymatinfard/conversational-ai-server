@@ -1,0 +1,69 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "add_to_order": 0,
+        "affirm": 1,
+        "back": 2,
+        "cancel_order": 3,
+        "check_order_status": 4,
+        "deny": 5,
+        "feedback_negative": 6,
+        "feedback_positive": 7,
+        "goodbye": 8,
+        "greet": 9,
+        "inform": 10,
+        "nlu_fallback": 11,
+        "order_food": 12,
+        "out_of_scope": 13,
+        "provide_address": 14,
+        "provide_payment": 15,
+        "remove_from_order": 16,
+        "restart": 17,
+        "session_start": 18
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_place_order": 13,
+        "action_check_order_status": 14,
+        "action_cancel_order": 15,
+        "action_store_feedback": 16,
+        "utter_ask_address": 17,
+        "utter_ask_more_items": 18,
+        "utter_ask_payment": 19,
+        "utter_feedback_thanks": 20,
+        "utter_goodbye": 21,
+        "utter_greet": 22,
+        "utter_order_confirmation": 23
+      },
+      "entities": {
+        "address": 0,
+        "food_item": 1,
+        "payment_method": 2
+      },
+      "slots": {
+        "food_order_0": 0,
+        "address_0": 1,
+        "payment_method_0": 2
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}
