@@ -27,26 +27,32 @@ nlu:
     - not really
     - I don't think so
 
+- intent: start_order
+  examples: |
+    - I want to place an order
+    - Can I order food?
+    - Let's start an order
+
 - intent: order_food
   examples: |
-    - I want to order food
-    - Can I get a burger and fries?
-    - I would like to order a pizza
-    - I need a vegan meal
-    - I want chicken biryani and coke
+    - I want to order [burger](food_item) and [fries](food_item)
+    - Can I get a [burger](food_item) and [fries](food_item)?
+    - I would like to order a [pizza](food_item)
+    - I need a [vegan meal](food_item)
+    - I want [chicken biryani](food_item) and [coke](food_item)
 
 - intent: add_to_order
   examples: |
-    - add a coke
-    - also get me some fries
-    - include a salad
-    - I want an extra burger
+    - add a [coke](food_item)
+    - also get me some [fries](food_item)
+    - include a [salad](food_item)
+    - I want an extra [burger](food_item)
 
 - intent: remove_from_order
   examples: |
-    - remove the fries
-    - cancel the drink
-    - take out the salad
+    - remove the [fries](food_item)
+    - cancel the [drink](food_item)
+    - take out the [salad](food_item)
 
 - intent: check_order_status
   examples: |
@@ -57,27 +63,36 @@ nlu:
 
 - intent: cancel_order
   examples: |
+    - Cancel delivering food
+    - Cancel the order
+    - Cancel my order
     - I want to cancel my order
     - Cancel everything
     - Stop the order please
+    - Abort the order
+    - Cancel the whole things
+    - Don't deliver anything
+    - I'd like to call off the order
 
 - intent: provide_address
   examples: |
-    - My address is 123 Main Street
-    - I live at 5th Avenue
-    - Deliver it to 45 Elm St.
+    - My address is [123 Main Street](address)
+    - Deliver it to [5th Avenue](address)
+    - Send it to [45 Elm St.](address)
+    - Address is [a street in Messina](address)
 
-- intent: provide_payment
+- intent: provide_payment_method
   examples: |
-    - I'll pay by card
-    - Cash on delivery
-    - Use my saved wallet
+    - I'll pay by [card](payment_method)
+    - [Cash on delivery](payment_method)
+    - Use my saved [wallet](payment_method)
 
-- intent: inform
+- intent: modify_order
   examples: |
-    - I want pizza and coke
-    - Just the salad
+    - no salt please
     - make it spicy
+    - don't make it spicy
+    - no meat
     - no onions please
 
 - intent: feedback_positive

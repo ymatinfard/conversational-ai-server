@@ -1,21 +1,19 @@
 version: "3.1"
+
 rules:
-- rule: Greet user
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - rule: Start order form
+    steps:
+      - intent: start_order
+      - action: order_form
+      - active_loop: order_form
 
-- rule: Say goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Submit order form
+    condition:
+      - active_loop: order_form
+    steps:
+      - action: order_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_order_confirmation
 
-- rule: Check order status
-  steps:
-  - intent: check_order_status
-  - action: action_check_order_status
-
-- rule: Cancel order
-  steps:
-  - intent: cancel_order
-  - action: action_cancel_order

@@ -10,8 +10,8 @@ intents:
   - check_order_status
   - cancel_order
   - provide_address
-  - provide_payment
-  - inform
+  - provide_payment_method
+  - modify_order
   - feedback_positive
   - feedback_negative
 
@@ -21,23 +21,39 @@ entities:
   - payment_method
 
 slots:
+  address:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: address
+      - type: from_text
+        intent: provide_address
+        not_intent: [greet, order_food, provide_payment]
+
   food_order:
     type: list
     influence_conversation: true
     mappings:
-      - type: custom
-
-  address:
-    type: text
-    mappings:
       - type: from_entity
-        entity: address
+        entity: food_item
 
   payment_method:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: payment_method
+      - type: from_text
+        intent: provide_payment_method
+        not_intent: [greet, order_food, provide_address]
+
+forms:
+  order_form:
+    required_slots:
+      - food_order
+      - address
+      - payment_method
 
 responses:
   utter_greet:
@@ -49,11 +65,11 @@ responses:
   utter_ask_address:
     - text: "Can you please provide your delivery address?"
 
-  utter_ask_payment:
+  utter_ask_payment_method:
     - text: "How would you like to pay? (cash/card/wallet)"
 
-  utter_order_confirmation:
-    - text: "Got it! Your order has been placed."
+  utter_ask_food_order:
+    - text: "Great! Tell me what would you like to have?"
 
   utter_feedback_thanks:
     - text: "Thanks for your feedback!"
@@ -61,10 +77,20 @@ responses:
   utter_ask_more_items:
     - text: "Would you like to add anything else?"
 
+  utter_order_confirmation:
+    - text: "Great! I've confirmed your order. Here's a summary of your order details:
+             
+             📦 Food items: {food_order}
+             📍 Delivery address: {address}
+             💳 Payment method: {payment_method}
+             
+             Your order has been placed and will be delivered soon. Thank you for ordering with us!"
+
 actions:
   - action_place_order
   - action_check_order_status
   - action_cancel_order
   - action_store_feedback
+  - action_order_confirmation  
 
   

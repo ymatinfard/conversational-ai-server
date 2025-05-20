@@ -4,24 +4,24 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
-assistant_id: placeholder_default
+assistant_id: 20250518-161538-unary-set
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 
 pipeline:
-  - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: DIETClassifier
-  - name: EntitySynonymMapper
-  - name: ResponseSelector
-  - name: FallbackClassifier
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+- name: EntitySynonymMapper
+- name: ResponseSelector
+- name: FallbackClassifier
 
 policies:
-  - name: RulePolicy
-  - name: MemoizationPolicy
-  - name: TEDPolicy
+- name: RulePolicy
+- name: MemoizationPolicy
+- name: TEDPolicy
 
